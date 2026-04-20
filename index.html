@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>YAMEN SYSTEM - CLICKABLE</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #000;
+            color: white;
+            font-family: 'Courier New', Courier, monospace; 
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: radial-gradient(circle, #111 1px, transparent 1px);
+            background-size: 30px 30px;
+            cursor: pointer; /* أضفت هذا ليعرف المستخدم أن الصفحة قابلة للتفاعل */
+        }
+
+        /* الشاشة الأولى: التحذير */
+        .alert-screen {
+            position: absolute;
+            text-align: center;
+            animation: fadeOut 0.8s forwards 2.5s;
+            z-index: 50;
+        }
+
+        /* الشاشة الثانية: الواجهة الرئيسية */
+        .main-interface {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 95%;
+            opacity: 0;
+            animation: fadeInMain 1.2s forwards 3.3s;
+        }
+
+        /* الحاويات الجانبية */
+        .side-content {
+            width: 200px;
+            padding: 15px;
+            border: 1px solid #1a1a1a;
+            background: rgba(5, 5, 5, 0.8);
+            border-radius: 4px;
+        }
+
+        /* روابط الديسكورد في الجوانب */
+        .discord-link {
+            color: #00ff41;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            transition: 0.3s;
+        }
+        .discord-link:hover {
+            color: white;
+            text-shadow: 0 0 10px #00ff41;
+        }
+
+        /* المحتوى المركزي */
+        .center-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        /* جعل الصورة قابلة للضغط */
+        .img-box {
+            width: 500px;
+            height: 280px;
+            border: 1px solid #000;
+            background-image: url('https://i.pinimg.com/originals/2b/76/0b/2b760bc07b8a1d1a5825427c87c2aa93.gif'); 
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            display: block;
+            transition: 0.5s;
+        }
+        .img-box:hover {
+            border-color: #00ff41;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+        }
+
+        /* جعل العنوان قابل للضغط */
+        .hacked-title {
+            font-size: 60px;
+            font-weight: 900;
+            margin: 15px 0;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+        .hacked-title:hover {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            transform: scale(1.05);
+        }
+
+        .terminal-box {
+            width: 550px;
+            border: 1px solid #1a1a1a;
+            background: rgba(0,0,0,0.9);
+            padding: 25px;
+            border-radius: 4px;
+            text-align: right;
+        }
+
+        @keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
+        @keyframes fadeInMain { from { opacity: 0; } to { opacity: 1; } }
+
+    </style>
+</head>
+<body>
+
+    <audio id="bgMusic" loop>
+        <source src="aa.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="alert-screen">
+        <div style="font-size: 30px; font-weight: bold;">SECURITY ALERT YaMeeN IN THE SYSTEM ..</div>
+        <div style="color:#555; margin-top:10px;">حبيت اسلم عليكم  </div>
+    </div>
+
+    <div class="main-interface">
+        <div class="side-content">
+            <h3 style="color: white; border-bottom: 1px solid #222;">Welcome </h3>
+            <a href="https://cdn.discordapp.com/attachments/1495471642581663896/1495829277264842922/image.png?ex=69e7ab12&is=69e65992&hm=6ba06f1925b52832f87cf4ffb9e7de607e8c95c9714d8a150eaf4465447d0745&" target="_blank" class="discord-link">> click . اضغط</a>
+        </div>
+
+        <div class="center-content">
+            <a href="https://cdn.discordapp.com/attachments/1495471642581663896/1495829277264842922/image.png?ex=69e7ab12&is=69e65992&hm=6ba06f1925b52832f87cf4ffb9e7de607e8c95c9714d8a150eaf4465447d0745&" target="_blank" class="img-box"></a>
+            <a href="https://cdn.discordapp.com/attachments/1495471642581663896/1495829277264842922/image.png?ex=69e7ab12&is=69e65992&hm=6ba06f1925b52832f87cf4ffb9e7de607e8c95c9714d8a150eaf4465447d0745&" target="_blank" class="hacked-title"> ha2cked your system</a>
+            <div class="terminal-box">
+                <div style="color:#444; text-align:center; border-bottom:1px solid #111; padding-bottom:10px; margin-bottom:15px;"> شلونكم يا احبائي </div>
+                <div style="margin-bottom:10px;">mystery@system:~$ <span style="color:white">why?</span></div>
+                <div style="color: #00ff41; font-weight: bold; font-size: 19px;">YaMeeN : السلام عليكم ورحمة الله وبركاته</div>
+            </div>
+        </div>
+
+        <div class="side-content"></div>
+    </div>
+
+    <script>
+        document.body.addEventListener('click', function() {
+            var audio = document.getElementById("bgMusic");
+            audio.play();
+        }, { once: true });
+    </script>
+
+</body>
+</html>
