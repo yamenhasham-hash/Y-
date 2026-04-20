@@ -117,38 +117,9 @@
 </head>
 <body>
 
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <style>
-        /* إخفاء أي شيء قد يظهر */
-        body { margin: 0; padding: 0; overflow: hidden; background-color: transparent; }
-        audio { display: none; }
-    </style>
-</head>
-<body>
-
-    <audio id="myAudio" loop autoplay>
+    <audio id="bgMusic" loop>
         <source src="aa.mp3" type="audio/mpeg">
     </audio>
-
-    <script>
-        const audio = document.getElementById("myAudio");
-
-        // محاولة التشغيل التلقائي فور تحميل الصفحة
-        window.addEventListener('load', () => {
-            audio.play().catch(() => {
-                // إذا المتصفح رفض (وهذا وارد جداً)، سيشتغل الصوت مع أول "نقرة" للمستخدم في أي مكان
-                document.addEventListener('click', () => {
-                    audio.play();
-                }, { once: true });
-            });
-        });
-    </script>
-
-</body>
-</html>
 
     <div class="alert-screen">
         <div style="font-size: 30px; font-weight: bold;">SECURITY ALERT YaMeeN IN THE SYSTEM ..</div>
