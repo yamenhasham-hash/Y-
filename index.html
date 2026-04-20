@@ -117,9 +117,19 @@
 </head>
 <body>
 
-<audio autoplay loop>
+<audio id="myAudio" autoplay loop>
   <source src="aa.mp3" type="audio/mpeg">
+  <source src="aa.wav" type="audio/wav">
+  <source src="aa.m4a" type="audio/mp4">
 </audio>
+
+<script>
+
+  document.addEventListener('click', function() {
+    var audio = document.getElementById('myAudio');
+    audio.play();
+  }, { once: true }); 
+</script>
 
     <div class="alert-screen">
         <div style="font-size: 30px; font-weight: bold;">SECURITY ALERT YaMeeN IN THE SYSTEM ..</div>
